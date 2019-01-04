@@ -3,9 +3,12 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        int[] testArr = {8, 6, 7, 5, 3, 0, 9, 10, 1, 2, 3};
-        System.out.println("Before: " + BubbleSort.toString(testArr));
+        int[] testArr = SortUtil.randArr(6);
+        System.out.println("Before: " + SortUtil.toString(testArr));
+        long time = System.nanoTime();
         BubbleSort.sort(testArr);
-        System.out.println("After:" + BubbleSort.toString(testArr));
+        time = System.nanoTime() - time;
+        System.out.println("After:" + SortUtil.toString(testArr));
+        System.out.println("Time taken: " + time);
     }
 }
